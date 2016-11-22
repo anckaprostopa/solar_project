@@ -18,7 +18,7 @@ def read_space_objects_data_from_file(input_filename):
             if len(line.strip()) == 0 or line[0] == '#':
                 continue  # пустые строки и строки-комментарии пропускаем
             object_type = line.split()[0].lower()
-            if object_type == "star"   :  # !!!FIXME: do the same for planet
+            if object_type == "star"   :
                 star = Star()
                 parse_star_parameters(line, star)
                 objects.append(star)
@@ -31,6 +31,10 @@ def read_space_objects_data_from_file(input_filename):
                 print("Unknown space object")
 
     return objects
+
+
+
+
 
 
 def parse_star_parameters(line, star):
@@ -80,7 +84,7 @@ def parse_planet_parameters(line, planet):
     planet.y=float(par[5])
     planet.Vx=float(par[6])
     planet.Vy=float(par[7])
-    pass  # FIXME: not done yet...
+    pass
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
